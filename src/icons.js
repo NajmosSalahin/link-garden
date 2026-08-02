@@ -8,6 +8,7 @@ import {
   SiShopify,
   SiSubstack,
   SiCaldotcom,
+  SiSpotify,
 } from 'react-icons/si'
 import { Mail, Globe } from 'lucide-react'
 
@@ -25,4 +26,5 @@ export const ICONS = {
   calcom: SiCaldotcom,
   email: Mail,
   website: Globe,
+  spotify: SiSpotify,
 }

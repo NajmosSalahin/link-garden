@@ -23,7 +23,9 @@ export default function MediaEmbedCard({ link }) {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
         referrerPolicy="strict-origin-when-cross-origin"
-        className="aspect-video w-full border-b border-brass-soft"
+        className={`w-full border-b border-brass-soft ${
+          link.embed.type === 'spotify' ? 'h-[352px]' : 'aspect-video'
+        }`}
       />
       <div className="flex items-center gap-3.5 p-3.5">
         <span className="flex size-11 shrink-0 items-center justify-center rounded-plate-sm border border-brass-soft bg-ink/50 text-brass">

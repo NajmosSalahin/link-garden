@@ -139,6 +139,23 @@ const links = [
       src: 'https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ',
     },
   },
+  {
+    id: 'spotify',
+    category: 'Content & Work',
+    title: 'Lo-fi beats — on repeat',
+    url: 'https://open.spotify.com/playlist/37i9dQZF1DX8Uebhn9wzrS',
+    icon: 'spotify',
+    description: 'The playlist behind the long work sessions.',
+    image: '',
+    featured: false,
+    /* SWAP: replace the playlist/track/album/episode ID below with your
+       own. Get it from Spotify's Share → Embed menu, or use:
+       https://open.spotify.com/embed/track/<track-id> */
+    embed: {
+      type: 'spotify',
+      src: 'https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS',
+    },
+  },
 
   /* ── Contact & More ── */
   {
