@@ -30,16 +30,6 @@ const links = [
 
   /* ── Socials ── */
   {
-    id: 'linktree',
-    category: 'Socials',
-    title: 'Linktree',
-    url: 'https://linktr.ee/najmos_salahin',
-    icon: 'linktree',
-    description: 'Everything in one place.',
-    image: '',
-    featured: false,
-  },
-  {
     id: 'instagram',
     category: 'Socials',
     title: 'Instagram',

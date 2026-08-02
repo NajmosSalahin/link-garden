@@ -18,7 +18,6 @@ import {
   SiPinterest,
   SiReddit,
   SiTwitch,
-  SiLinktree,
 } from 'react-icons/si'
 import { Mail, Globe, Keyboard } from 'lucide-react'
 
@@ -47,7 +46,6 @@ export const ICONS = {
   reddit: SiReddit,
   twitch: SiTwitch,
   pinterest: SiPinterest,
-  linktree: SiLinktree,
   linkedin: LinkedinIcon,
   github: SiGithub,
   patreon: SiPatreon,
