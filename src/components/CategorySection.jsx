@@ -1,6 +1,8 @@
 import SprigMark from './SprigMark'
 import LinkCard from './LinkCard'
 import MediaEmbedCard from './MediaEmbedCard'
+import SpotifyCard from './SpotifyCard'
+import StatsCard from './StatsCard'
 
 /* An index entry in the field journal: brass hairline, one sprig,
    and the category name set as spaced small-caps specimen tags. */
@@ -20,7 +22,15 @@ export default function CategorySection({ name, links }) {
       </div>
       <div className="flex flex-col gap-3">
         {links.map((link) =>
-          link.embed ? <MediaEmbedCard key={link.id} link={link} /> : <LinkCard key={link.id} link={link} />,
+          link.embed ? (
+            <MediaEmbedCard key={link.id} link={link} />
+          ) : link.spotify ? (
+            <SpotifyCard key={link.id} link={link} />
+          ) : link.stats ? (
+            <StatsCard key={link.id} link={link} />
+          ) : (
+            <LinkCard key={link.id} link={link} />
+          ),
         )}
       </div>
     </section>

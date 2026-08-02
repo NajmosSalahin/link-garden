@@ -3,7 +3,6 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Check, Copy } from 'lucide-react'
 import { useClickCount } from '../hooks/useClickCount'
 import { ICONS } from '../icons'
-import LiveStatsRow from './LiveStatsRow'
 
 function CardContent({ link }) {
   const Icon = ICONS[link.icon] ?? null
@@ -109,7 +108,6 @@ export default function LinkCard({ link }) {
           )}
         </span>
       </span>
-      {link.stats && <LiveStatsRow />}
     </motion.a>
   )
 }

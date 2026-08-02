@@ -132,8 +132,7 @@ const links = [
     description: 'A short film on the autumn shift. Watch it here.',
     image: '',
     featured: false,
-    /* Swap in your own embed. For Spotify use:
-       embed: { type: 'spotify', src: 'https://open.spotify.com/embed/...' } */
+    /* Swap in your own embed URL (YouTube). */
     embed: {
       type: 'youtube',
       src: 'https://www.youtube-nocookie.com/embed/aqz-KE-bpKQ',
@@ -148,13 +147,9 @@ const links = [
     description: 'The playlist behind the long work sessions.',
     image: '',
     featured: false,
-    /* SWAP: replace the playlist/track/album/episode ID below with your
-       own. Get it from Spotify's Share → Embed menu, or use:
-       https://open.spotify.com/embed/track/<track-id> */
-    embed: {
-      type: 'spotify',
-      src: 'https://open.spotify.com/embed/playlist/37i9dQZF1DX8Uebhn9wzrS',
-    },
+    /* `spotify: true` renders the "Now listening" plate card instead of
+       an embed — SWAP the playlist URL above for your own link. */
+    spotify: true,
   },
 
   {

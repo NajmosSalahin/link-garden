@@ -9,9 +9,8 @@ import {
   SiSubstack,
   SiCaldotcom,
   SiSpotify,
-  SiMonkeytype,
 } from 'react-icons/si'
-import { Mail, Globe } from 'lucide-react'
+import { Mail, Globe, Keyboard } from 'lucide-react'
 
 /* Icon lookup for the `icon` field in src/data/links.js.
    Add a line here when you add a new platform to the data file. */
@@ -28,5 +27,5 @@ export const ICONS = {
   email: Mail,
   website: Globe,
   spotify: SiSpotify,
-  monkeytype: SiMonkeytype,
+  monkeytype: Keyboard,
 }
