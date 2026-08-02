@@ -157,6 +157,20 @@ const links = [
     },
   },
 
+  {
+    id: 'monkeytype',
+    category: 'Content & Work',
+    title: 'Monkeytype — typing stats',
+    url: 'https://monkeytype.com/profile/ChouCho_P',
+    icon: 'monkeytype',
+    description: 'Live personal bests, refreshed daily from the API.',
+    image: '',
+    featured: false,
+    /* `stats: true` renders the live stats row (see public/stats.json,
+       kept fresh by the .github/workflows/update-stats.yml cron). */
+    stats: true,
+  },
+
   /* ── Contact & More ── */
   {
     id: 'email',

@@ -56,6 +56,21 @@ localStorage and applied before first paint to avoid a flash.
 Every link keeps a rough click count in `localStorage` (`link-garden:clicks`),
 shown subtly on the card. No backend, cleared with site data.
 
+## Live Monkeytype stats
+
+The Monkeytype card shows your real personal bests, refreshed automatically:
+
+1. Create an ApeKey at `monkeytype.com/settings` ("ape key" section) and activate it.
+2. Store it as a repo secret: `gh secret set MONKEYTYPE_APE_KEY`
+3. `.github/workflows/update-stats.yml` (daily cron, also runnable manually from the
+   Actions tab) calls the Monkeytype API and commits `public/stats.json` — but only
+   when the numbers actually change, so it doesn't churn deploys.
+4. The card fetches `/stats.json` on load and renders `Best 15s · 60 wpm · 98.7% acc`
+   with a refresh button. If the fetch fails it quietly shows just the description.
+
+The card's `stats: true` flag lives in `src/data/links.js`. To change the cadence,
+edit the cron in the workflow (see crontab.guru).
+
 ## Sharing & social preview
 
 `index.html` ships `<title>`, meta description, Open Graph and Twitter Card

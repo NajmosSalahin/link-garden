@@ -9,6 +9,7 @@ import {
   SiSubstack,
   SiCaldotcom,
   SiSpotify,
+  SiMonkeytype,
 } from 'react-icons/si'
 import { Mail, Globe } from 'lucide-react'
 
@@ -27,4 +28,5 @@ export const ICONS = {
   email: Mail,
   website: Globe,
   spotify: SiSpotify,
+  monkeytype: SiMonkeytype,
 }

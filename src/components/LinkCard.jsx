@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Check, Copy } from 'lucide-react'
 import { useClickCount } from '../hooks/useClickCount'
 import { ICONS } from '../icons'
+import LiveStatsRow from './LiveStatsRow'
 
 function CardContent({ link }) {
   const Icon = ICONS[link.icon] ?? null
@@ -90,22 +91,25 @@ export default function LinkCard({ link }) {
       onClick={bump}
       whileHover={reduced ? undefined : { y: -2 }}
       whileTap={reduced ? undefined : { scale: 0.99 }}
-      className="group flex w-full items-center gap-3.5 rounded-plate border border-brass-soft bg-panel p-3.5 text-left transition-colors hover:border-brass/50 hover:bg-panel-lift"
+      className="group flex w-full flex-col gap-2 rounded-plate border border-brass-soft bg-panel p-3.5 text-left transition-colors hover:border-brass/50 hover:bg-panel-lift"
     >
-      <CardContent link={link} />
-      <span className="flex shrink-0 flex-col items-end gap-1.5">
-        <ArrowUpRight
-          size={16}
-          strokeWidth={1.75}
-          className="text-brass/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brass"
-          aria-hidden="true"
-        />
-        {count > 0 && (
-          <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-muted/70">
-            {count} click{count === 1 ? '' : 's'}
-          </span>
-        )}
+      <span className="flex w-full items-center gap-3.5">
+        <CardContent link={link} />
+        <span className="flex shrink-0 flex-col items-end gap-1.5">
+          <ArrowUpRight
+            size={16}
+            strokeWidth={1.75}
+            className="text-brass/70 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-brass"
+            aria-hidden="true"
+          />
+          {count > 0 && (
+            <span className="font-mono text-[9px] uppercase tracking-[0.12em] text-muted/70">
+              {count} click{count === 1 ? '' : 's'}
+            </span>
+          )}
+        </span>
       </span>
+      {link.stats && <LiveStatsRow />}
     </motion.a>
   )
 }
