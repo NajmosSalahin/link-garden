@@ -119,26 +119,6 @@ const links = [
     image: '',
     featured: false,
   },
-  {
-    id: 'tiktok',
-    category: 'Socials',
-    title: 'TikTok',
-    url: 'https://tiktok.com/@yourname',
-    icon: 'tiktok',
-    description: '',
-    image: '',
-    featured: false,
-  },
-  {
-    id: 'youtube',
-    category: 'Socials',
-    title: 'YouTube',
-    url: 'https://youtube.com/@yourname',
-    icon: 'youtube',
-    description: '',
-    image: '',
-    featured: false,
-  },
 
   /* ── Shop & Marketplaces ── */
   {

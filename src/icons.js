@@ -1,7 +1,6 @@
 import { createElement } from 'react'
 import {
   SiInstagram,
-  SiTiktok,
   SiYoutube,
   SiX,
   SiEtsy,
@@ -37,7 +36,6 @@ function LinkedinIcon(props) {
    Add a line here when you add a new platform to the data file. */
 export const ICONS = {
   instagram: SiInstagram,
-  tiktok: SiTiktok,
   youtube: SiYoutube,
   x: SiX,
   facebook: SiFacebook,
