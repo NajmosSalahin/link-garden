@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────────────────────
+   Link Garden — token system
+   The whole look lives here. Swap a value, the whole site follows.
+
+   Dark theme (default):
+     ink        #16211C  page background
+     panel      #1E2E27  lifted card surface
+     parchment  #EDE6D6  text
+     brass      #B8925A  the one warm metallic accent
+     wine       #7A3B4C  featured card only
+
+   Light theme swaps ink/parchment and deepens brass so the accent
+   still passes contrast on parchment. Wine is unchanged.
+   ───────────────────────────────────────────────────────────── */
+
+:root {
+  --ink: #16211C;
+  --ink-deep: #101914; /* page background fades slightly deeper than panels */
+  --panel: #1E2E27;
+  --panel-lift: #24382F;
+  --parchment: #EDE6D6;
+  --muted: rgba(237, 230, 214, 0.62);
+  --brass: #B8925A;
+  --brass-soft: rgba(184, 146, 90, 0.28);
+  --wine: #7A3B4C;
+  --wine-deep: #62303E;
+  --focus: rgba(184, 146, 90, 0.55);
+}
+
+[data-theme="light"] {
+  --ink: #EDE6D6;
+  --ink-deep: #E3DAC2;
+  --panel: #F6F0E1;
+  --panel-lift: #FBF7EC;
+  --parchment: #16211C;
+  --muted: rgba(22, 33, 28, 0.66);
+  --brass: #7C5F33; /* deepened brass — keeps AA contrast on parchment */
+  --brass-soft: rgba(138, 104, 58, 0.32);
+  --wine: #7A3B4C;
+  --wine-deep: #6A3441;
+  --focus: rgba(138, 104, 58, 0.45);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-deep: var(--ink-deep);
+  --color-panel: var(--panel);
+  --color-panel-lift: var(--panel-lift);
+  --color-parchment: var(--parchment);
+  --color-muted: var(--muted);
+  --color-brass: var(--brass);
+  --color-brass-soft: var(--brass-soft);
+  --color-wine: var(--wine);
+  --color-wine-deep: var(--wine-deep);
+
+  --font-display: "Newsreader", "Georgia", serif;
+  --font-sans: "Karla", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Space Mono", "Courier New", monospace;
+
+  --radius-plate: 10px;
+  --radius-plate-sm: 8px;
+}
+
+@layer base {
+  html {
+    background-color: var(--ink-deep);
+  }
+
+  body {
+    background-color: var(--ink-deep);
+    color: var(--parchment);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background-color: var(--brass);
+    color: var(--ink);
+  }
+
+  a:focus-visible,
+  button:focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+}
