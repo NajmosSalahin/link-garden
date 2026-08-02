@@ -7,7 +7,7 @@ export default function ProfileHeader({ profile }) {
     <header className="flex flex-col items-center gap-4 text-center">
       <img
         src="/avatar.svg"
-        alt="Avatar of Aurnob Rahman"
+        alt={`Avatar of ${profile.name}`}
         width={96}
         height={96}
         className="rounded-full border border-brass/70 p-[3px]"

@@ -12,7 +12,7 @@ export default function SocialRow({ links }) {
   const reduced = useReducedMotion()
 
   return (
-    <nav aria-label="Social profiles" className="flex justify-center gap-2.5">
+    <nav aria-label="Social profiles" className="flex flex-wrap justify-center gap-2.5">
       {links.map((link) => (
         <motion.a
           key={link.id}
