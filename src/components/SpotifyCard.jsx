@@ -2,12 +2,14 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight, Play } from 'lucide-react'
 import { SiSpotify } from 'react-icons/si'
 import { useClickCount } from '../hooks/useClickCount'
+import { useOEmbed } from '../hooks/useOEmbed'
 
 /* "Now listening" plate for links with `spotify: true` — no third-party
    iframe; a designed wine tile + an outbound Listen button instead. */
 export default function SpotifyCard({ link }) {
   const reduced = useReducedMotion()
   const [count, bump] = useClickCount(link.id)
+  const { data } = useOEmbed(link.url)
 
   return (
     <motion.a
@@ -21,8 +23,22 @@ export default function SpotifyCard({ link }) {
       className="group flex w-full flex-col gap-3 rounded-plate border border-brass-soft bg-panel p-4 transition-colors hover:border-brass/50 hover:bg-panel-lift"
     >
       <span className="flex w-full items-center gap-3.5">
-        <span className="flex size-11 shrink-0 items-center justify-center rounded-plate-sm bg-wine text-parchment shadow-[0_8px_20px_-10px_var(--wine-deep)]">
-          <Play size={18} strokeWidth={1.75} fill="currentColor" aria-hidden="true" />
+        <span className="relative flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-plate-sm border border-brass-soft bg-wine text-parchment shadow-[0_8px_20px_-10px_var(--wine-deep)]">
+          {data?.image ? (
+            <>
+              <img
+                src={data.image}
+                alt=""
+                loading="lazy"
+                className="absolute inset-0 size-full object-cover"
+              />
+              <span className="absolute bottom-0.5 right-0.5 flex size-5 items-center justify-center rounded-full bg-wine text-parchment ring-1 ring-parchment/30">
+                <Play size={10} fill="currentColor" strokeWidth={0} aria-hidden="true" />
+              </span>
+            </>
+          ) : (
+            <Play size={18} strokeWidth={1.75} fill="currentColor" aria-hidden="true" />
+          )}
         </span>
         <span className="min-w-0 flex-1 text-left">
           <span className="block truncate text-[15px] font-semibold text-parchment">
