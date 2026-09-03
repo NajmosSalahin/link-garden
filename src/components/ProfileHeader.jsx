@@ -13,7 +13,7 @@ export default function ProfileHeader({ profile }) {
         className="rounded-full border border-brass/70 p-[3px]"
       />
       <div className="flex flex-col items-center gap-1.5">
-        <h1 className="font-display text-[2.1rem] font-semibold leading-tight tracking-tight text-parchment">
+        <h1 className="font-display text-[2.1rem] font-normal leading-tight tracking-tight text-parchment">
           {profile.name}
         </h1>
         <p className="max-w-xs text-[15px] leading-relaxed text-muted">{profile.bio}</p>

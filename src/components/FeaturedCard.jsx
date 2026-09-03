@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowUpRight } from 'lucide-react'
-import SprigMark from './SprigMark'
+import WaveMark from './WaveMark'
 import { ICONS } from '../icons'
 
 /* The one bigger, wine-accented card — only rendered when a link
@@ -18,7 +18,7 @@ export default function FeaturedCard({ link }) {
       className="group relative block overflow-hidden rounded-plate border border-brass/40 bg-wine p-5 text-parchment transition-shadow hover:shadow-[0_12px_32px_-16px_var(--wine-deep)]"
     >
       <p className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.22em] text-parchment/75">
-        <SprigMark className="size-3.5" />
+        <WaveMark className="size-3.5" />
         Featured
       </p>
       <div className="mt-3 flex items-start gap-4">
@@ -28,7 +28,7 @@ export default function FeaturedCard({ link }) {
           </span>
         )}
         <div className="min-w-0">
-          <h2 className="font-display text-xl font-semibold leading-snug text-parchment">
+          <h2 className="font-display text-xl font-normal leading-snug text-parchment">
             {link.title}
           </h2>
           {link.description && (

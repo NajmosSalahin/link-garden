@@ -1,4 +1,4 @@
-import SprigMark from './SprigMark'
+import WaveMark from './WaveMark'
 import LinkCard from './LinkCard'
 import MediaEmbedCard from './MediaEmbedCard'
 import SpotifyCard from './SpotifyCard'
@@ -11,7 +11,7 @@ export default function CategorySection({ name, links }) {
     <section aria-labelledby={`section-${name}`} className="flex flex-col gap-3">
       <div className="flex items-center gap-3">
         <span aria-hidden="true" className="h-px flex-1 bg-brass-soft" />
-        <SprigMark className="size-3.5 text-brass" />
+        <WaveMark className="size-3.5 text-brass" />
         <h2
           id={`section-${name}`}
           className="whitespace-nowrap font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-brass"

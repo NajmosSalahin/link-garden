@@ -4,43 +4,47 @@
    Link Garden — token system
    The whole look lives here. Swap a value, the whole site follows.
 
-   Dark theme (default):
-     ink        #16211C  page background
-     panel      #1E2E27  lifted card surface
-     parchment  #EDE6D6  text
-     brass      #B8925A  the one warm metallic accent
-     wine       #7A3B4C  featured card only
+   Theme: Shōwa-era JAL/JNR travel poster.
+   Wave stack motif (Hokusai), Archivo Black headlines, sun-yellow
+   accents over an indigo night sky (dark) or cream paper (light).
 
-   Light theme swaps ink/parchment and deepens brass so the accent
-   still passes contrast on parchment. Wine is unchanged.
+   Dark theme (default) — indigo night, sun-yellow accent:
+     ink        #0E1A33  page background (indigo night)
+     panel      #152040  lifted card surface
+     parchment  #F4ECD6  cream paper (text + base)
+     brass      #F5C24A  sun-yellow (the one warm accent)
+     wine       #C8302C  poster red (featured + spotify card)
+
+   Light theme inverts ink/parchment and deepens brass so the accent
+   still passes contrast on cream. Wine deepens slightly for AA.
    ───────────────────────────────────────────────────────────── */
 
 :root {
-  --ink: #16211C;
-  --ink-deep: #101914; /* page background fades slightly deeper than panels */
-  --panel: #1E2E27;
-  --panel-lift: #24382F;
-  --parchment: #EDE6D6;
-  --muted: rgba(237, 230, 214, 0.62);
-  --brass: #B8925A;
-  --brass-soft: rgba(184, 146, 90, 0.28);
-  --wine: #7A3B4C;
-  --wine-deep: #62303E;
-  --focus: rgba(184, 146, 90, 0.55);
+  --ink: #0E1A33;
+  --ink-deep: #091022; /* page background fades slightly deeper than panels */
+  --panel: #152040;
+  --panel-lift: #1C2A52;
+  --parchment: #F4ECD6;
+  --muted: rgba(244, 236, 214, 0.65);
+  --brass: #F5C24A; /* sun-yellow */
+  --brass-soft: rgba(245, 194, 74, 0.28);
+  --wine: #C8302C; /* poster red */
+  --wine-deep: #8E1E1B;
+  --focus: rgba(245, 194, 74, 0.6);
 }
 
 [data-theme="light"] {
-  --ink: #EDE6D6;
-  --ink-deep: #E3DAC2;
-  --panel: #F6F0E1;
-  --panel-lift: #FBF7EC;
-  --parchment: #16211C;
-  --muted: rgba(22, 33, 28, 0.66);
-  --brass: #7C5F33; /* deepened brass — keeps AA contrast on parchment */
-  --brass-soft: rgba(138, 104, 58, 0.32);
-  --wine: #7A3B4C;
-  --wine-deep: #6A3441;
-  --focus: rgba(138, 104, 58, 0.45);
+  --ink: #F4ECD6;
+  --ink-deep: #EBE0C2;
+  --panel: #FBF6E7;
+  --panel-lift: #FFFAEC;
+  --parchment: #0E1A33;
+  --muted: rgba(14, 26, 51, 0.62);
+  --brass: #B8800A; /* deepened sun-yellow — keeps AA contrast on cream */
+  --brass-soft: rgba(184, 128, 10, 0.28);
+  --wine: #A8221F; /* deepened poster red */
+  --wine-deep: #7A1816;
+  --focus: rgba(184, 128, 10, 0.55);
 }
 
 @theme inline {
@@ -55,7 +59,7 @@
   --color-wine: var(--wine);
   --color-wine-deep: var(--wine-deep);
 
-  --font-display: "Newsreader", "Georgia", serif;
+  --font-display: "Archivo Black", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Karla", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Space Mono", "Courier New", monospace;
 

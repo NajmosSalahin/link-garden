@@ -9,27 +9,57 @@ const outFile = join(dirname(fileURLToPath(import.meta.url)), '..', 'public', 'o
 
 const svg = `
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
-  <rect width="1200" height="630" fill="#101914"/>
-  <rect x="0" y="0" width="1200" height="630" fill="url(#glow)"/>
   <defs>
-    <radialGradient id="glow" cx="0.5" cy="0.45" r="0.75">
-      <stop offset="0" stop-color="#16211C"/>
-      <stop offset="1" stop-color="#101914"/>
+    <radialGradient id="glow" cx="0.5" cy="0.55" r="0.75">
+      <stop offset="0" stop-color="#152040"/>
+      <stop offset="1" stop-color="#091022"/>
     </radialGradient>
   </defs>
-  <rect x="34" y="34" width="1132" height="562" fill="none" stroke="#B8925A" stroke-opacity="0.45" stroke-width="2"/>
-  <g stroke="#B8925A" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" fill="none">
-    <path d="M600 300C600 300 600 150 540 88"/>
-    <path d="M600 240C600 240 680 208 692 142"/>
-    <path d="M600 348C600 348 510 330 496 268"/>
-    <path d="M600 414C600 414 700 392 714 312"/>
-    <path d="M600 474C600 474 500 456 486 386"/>
+  <rect width="1200" height="630" fill="#091022"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#glow)"/>
+
+  <!-- Frame: outer rule + inner hairline -->
+  <rect x="34" y="34" width="1132" height="562" fill="none" stroke="#F5C24A" stroke-opacity="0.45" stroke-width="2"/>
+  <rect x="50" y="50" width="1100" height="530" fill="none" stroke="#F5C24A" stroke-opacity="0.18" stroke-width="1"/>
+
+  <!-- Dashed sun dial behind the disc -->
+  <circle cx="600" cy="430" r="260" fill="none" stroke="#F5C24A" stroke-opacity="0.35" stroke-width="1.5" stroke-dasharray="4 10"/>
+
+  <!-- Poster-red sun disc -->
+  <circle cx="600" cy="330" r="78" fill="#C8302C" opacity="0.9"/>
+
+  <!-- Sun rays radiating from the disc -->
+  <g stroke="#F5C24A" stroke-width="2" stroke-linecap="round" opacity="0.6">
+    <line x1="600" y1="220" x2="600" y2="200"/>
+    <line x1="470" y1="250" x2="456" y2="236"/>
+    <line x1="730" y1="250" x2="744" y2="236"/>
+    <line x1="430" y1="330" x2="410" y2="330"/>
+    <line x1="770" y1="330" x2="790" y2="330"/>
+    <line x1="470" y1="410" x2="456" y2="424"/>
+    <line x1="730" y1="410" x2="744" y2="424"/>
+    <line x1="510" y1="240" x2="500" y2="222"/>
+    <line x1="690" y1="240" x2="700" y2="222"/>
   </g>
-  <circle cx="600" cy="300" r="26" fill="#B8925A"/>
-  <line x1="220" y1="500" x2="980" y2="500" stroke="#B8925A" stroke-opacity="0.45" stroke-width="2"/>
-  <line x1="340" y1="512" x2="860" y2="512" stroke="#B8925A" stroke-opacity="0.3" stroke-width="2"/>
-  <circle cx="220" cy="500" r="6" fill="#B8925A"/>
-  <circle cx="980" cy="500" r="6" fill="#B8925A"/>
+
+  <!-- Hokusai wave stack at the bottom -->
+  <g stroke="#F5C24A" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-40 470 Q300 410 600 470 T1240 470" stroke-width="6"/>
+    <path d="M-40 440 Q300 388 600 440 T1240 440" stroke-width="5" opacity="0.7"/>
+    <path d="M-40 412 Q300 366 600 412 T1240 412" stroke-width="4" opacity="0.5"/>
+  </g>
+
+  <!-- Title text — Archivo Black feel via a heavy display stack -->
+  <text x="600" y="178" text-anchor="middle" font-family="'Archivo Black','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="64" font-weight="900" fill="#F4ECD6" letter-spacing="2">LINK GARDEN</text>
+
+  <!-- Tagline in Space Mono style -->
+  <text x="600" y="218" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="18" fill="#F5C24A" letter-spacing="6">EVERY LINK · ONE QUIET PLACE</text>
+
+  <!-- Hairline rule with bulleted ends -->
+  <line x1="340" y1="552" x2="860" y2="552" stroke="#F5C24A" stroke-opacity="0.45" stroke-width="2"/>
+  <line x1="420" y1="566" x2="780" y2="566" stroke="#F5C24A" stroke-opacity="0.3" stroke-width="1.5"/>
+  <circle cx="340" cy="552" r="5" fill="#F5C24A"/>
+  <circle cx="860" cy="552" r="5" fill="#F5C24A"/>
+  <text x="600" y="548" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="13" fill="#F4ECD6" letter-spacing="4" opacity="0.7">SHOWA · TRAVEL POSTER · NO. 1</text>
 </svg>`
 
 await sharp(Buffer.from(svg)).resize(1200, 630).png().toFile(outFile)
