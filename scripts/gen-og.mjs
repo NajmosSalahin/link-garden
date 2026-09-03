@@ -48,8 +48,8 @@ const svg = `
     <path d="M-40 412 Q300 366 600 412 T1240 412" stroke-width="4" opacity="0.5"/>
   </g>
 
-  <!-- Title text — Archivo Black feel via a heavy display stack -->
-  <text x="600" y="178" text-anchor="middle" font-family="'Archivo Black','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="64" font-weight="900" fill="#F4ECD6" letter-spacing="2">LINK GARDEN</text>
+  <!-- Title text -->
+  <text x="600" y="178" text-anchor="middle" font-family="'Archivo Black','Helvetica Neue',Helvetica,Arial,sans-serif" font-size="64" font-weight="900" fill="#F4ECD6" letter-spacing="2">NAJMUS SALAHIN</text>
 
   <!-- Tagline in Space Mono style -->
   <text x="600" y="218" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="18" fill="#F5C24A" letter-spacing="6">EVERY LINK · ONE QUIET PLACE</text>
@@ -59,7 +59,7 @@ const svg = `
   <line x1="420" y1="566" x2="780" y2="566" stroke="#F5C24A" stroke-opacity="0.3" stroke-width="1.5"/>
   <circle cx="340" cy="552" r="5" fill="#F5C24A"/>
   <circle cx="860" cy="552" r="5" fill="#F5C24A"/>
-  <text x="600" y="548" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="13" fill="#F4ECD6" letter-spacing="4" opacity="0.7">SHOWA · TRAVEL POSTER · NO. 1</text>
+  <text x="600" y="548" text-anchor="middle" font-family="'Space Mono','Courier New',monospace" font-size="13" fill="#F4ECD6" letter-spacing="4" opacity="0.7">LINK GARDEN</text>
 </svg>`
 
 await sharp(Buffer.from(svg)).resize(1200, 630).png().toFile(outFile)

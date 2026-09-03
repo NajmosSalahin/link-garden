@@ -10,8 +10,8 @@ import Footer from './components/Footer'
 
 /* ── The only thing you need for day-to-day updates. ── */
 const profile = {
-  name: 'Najmos Salahin',
-  bio: 'Designer & maker of small, useful things. Notes on plants, code, and quiet weekends.',
+  name: 'Najmus Salahin',
+  bio: 'Designer & maker of small, useful things. Routes, code, and quiet weekends in Dhaka.',
   location: 'Dhaka, Bangladesh',
 }
 
