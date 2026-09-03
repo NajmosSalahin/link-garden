@@ -17,6 +17,20 @@
 
    Light theme inverts ink/parchment and deepens brass so the accent
    still passes contrast on cream. Wine deepens slightly for AA.
+
+   Wave banner tokens (header illustration only):
+     wave-sky         dusk teal (dark) / warm cream (light)
+     wave-sun         poster red, both themes close in hue
+     wave-peak        distant mountain silhouette
+     wave-water-deep  main swell, darkest water tone
+     wave-water-mid   main swell, lighter inset band
+     wave-ink         outline + foam-claw negative space
+
+   These are a dedicated sub-palette, not derived from ink/panel/
+   brass/wine: the illustration needs six clearly separated values
+   (sky, sun, peak, two water tones, ink) that those four tokens,
+   built for a different palette, can't supply without collision.
+   Foam and the peak's snow-cap reuse --parchment directly.
    ───────────────────────────────────────────────────────────── */
 
 :root {
@@ -31,6 +45,14 @@
   --wine: #C8302C; /* poster red */
   --wine-deep: #8E1E1B;
   --focus: rgba(245, 194, 74, 0.6);
+
+  /* wave banner — dusk variant */
+  --wave-sky: #3A4A52;
+  --wave-sun: #D45B4A;
+  --wave-peak: #26333B;
+  --wave-water-deep: #1B3A4D;
+  --wave-water-mid: #2E6B7A;
+  --wave-ink: #0D1512;
 }
 
 [data-theme="light"] {
@@ -45,6 +67,14 @@
   --wine: #A8221F; /* deepened poster red */
   --wine-deep: #7A1816;
   --focus: rgba(184, 128, 10, 0.55);
+
+  /* wave banner — daytime variant */
+  --wave-sky: #E8D9A8;
+  --wave-sun: #C8443A;
+  --wave-peak: #3A5468;
+  --wave-water-deep: #1D4E6B;
+  --wave-water-mid: #2E7D93;
+  --wave-ink: #16211C;
 }
 
 @theme inline {
@@ -58,6 +88,13 @@
   --color-brass-soft: var(--brass-soft);
   --color-wine: var(--wine);
   --color-wine-deep: var(--wine-deep);
+
+  --color-wave-sky: var(--wave-sky);
+  --color-wave-sun: var(--wave-sun);
+  --color-wave-peak: var(--wave-peak);
+  --color-wave-water-deep: var(--wave-water-deep);
+  --color-wave-water-mid: var(--wave-water-mid);
+  --color-wave-ink: var(--wave-ink);
 
   --font-display: "Archivo Black", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Karla", "Helvetica Neue", ui-sans-serif, system-ui, sans-serif;

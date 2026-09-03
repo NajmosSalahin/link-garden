@@ -1,16 +1,19 @@
 import { MapPin } from 'lucide-react'
+import WaveBanner from './WaveBanner'
 
-/* Name, tagline, location, and the brass-ringed avatar.
-   Content comes from profile object passed by App. */
+/* Name, tagline, location, and the brass-ringed avatar, staged over
+   the wave banner illustration. The banner sits behind as a hero
+   layer; avatar/name/bio/location stay centered on top of it. */
 export default function ProfileHeader({ profile }) {
   return (
-    <header className="flex flex-col items-center gap-4 text-center">
+    <header className="relative flex flex-col items-center gap-4 overflow-hidden rounded-plate pb-6 pt-10 text-center">
+      <WaveBanner className="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover" />
       <img
         src="/avatar.svg"
         alt={`Avatar of ${profile.name}`}
         width={96}
         height={96}
-        className="rounded-full border border-brass/70 p-[3px]"
+        className="rounded-full border border-brass/70 bg-panel p-[3px]"
       />
       <div className="flex flex-col items-center gap-1.5">
         <h1 className="font-display text-[2.1rem] font-normal leading-tight tracking-tight text-parchment">

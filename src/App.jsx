@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import links from './data/links'
 import ProfileHeader from './components/ProfileHeader'
-import HeaderBanner from './components/HeaderBanner'
 import SocialRow from './components/SocialRow'
 import FeaturedCard from './components/FeaturedCard'
 import CategorySection from './components/CategorySection'
@@ -51,11 +50,10 @@ export default function App() {
         animate="show"
         className="flex flex-col gap-9"
       >
-        <motion.div variants={item} className="relative flex flex-col gap-6">
+        <motion.div variants={item} className="relative flex flex-col gap-8">
           <div className="absolute right-0 top-0 z-10">
             <ThemeToggle />
           </div>
-          <HeaderBanner />
           <ProfileHeader profile={profile} />
         </motion.div>
 
